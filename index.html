@@ -9,13 +9,13 @@
     <h1>Linux_Prob 0.1</h1>
     <h2>Display Configuration</h2>
 
-    ```bash
+    <code>
     $ ps -e | grep Xorg
-    ```
+    </code>
 
     <h2>chack if xrandr is installed</h2>
 
-    ```bash
+    <code>
     $ xrandr
     Screen 0: minimum 320 x 200, current 1920 x 1080, maximum 16384 x 16384
     HDMI-1 connected primary 1920x1080+0+0 (normal left inverted right x axis y axis) 410mm x 230mm
@@ -41,10 +41,10 @@
     $ echo "xrandr --output HDMI-1 --mode 1920x1080" >> .profile .xprofile .xinitric
 
     $ touch /etc/X11/xorg.conf.d/10-monitor.conf
-    ```
+    </code>
     <p>paste in /etc/X11/xorg.conf.d/10-monitor.conf</p>
 
-    ```bash
+    <code>
     Section "Monitor"
         Identifier    "HDMI1" 
         Option        "PreferredMode" "1920x1080"
@@ -52,23 +52,23 @@
         Option        "Position" "0 0"
         Option        "Enable" "true"
     EndSection 
-    ```
+    </code>
     <h3>gdm 1920x1080</h3>
 
-    ```bash
+    <code>
     sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/monitors.xml 
-    ```
+    </code>
     <p>also add https://linuxreviews.org/HOWTO_fix_screen_tearing#:~:text=Intel%20iGPUs%5B,if%20it%27s%20new. also help full https://askubuntu.com/questions/1347160/screen-tearing-when-using-xrandr-and-x11vnc-on-ubuntu-20-04 , https://christitus.com/fix-screen-tearing-linux/</p>
 
-    ```bash
+    <code>
     sudo vim /etc/X11/xorg.conf.d/20-intel-gpu.conf
-    ```
+    </code>
 
     <p>paste this in there
     to find out the driver use: grep drivers /var/log/Xorg.0.log
     </p>
 
-    ```bsah
+    <code>
     Section "Device"
     Identifier  "Intel Graphics"
     Driver      "intel"
@@ -83,23 +83,23 @@
     Option      "TripleBuffer" "true"
     Option      "TearFree"  "true"
     EndSection
-    ```
+    </code>
 
 
     <h3>After doing all that just</h3>
 
-    ```bash
+    <code>
     sudo reboot
-    ```
+    </code>
     <h3>Install</h3>
 
-    ```bash
+    <code>
     $ sudo <packet_manager> install arandr
     e.g
     sudo apt install arandr
     sudo dnf install arandr
     sudo pacman -Ss arandr
-    ```
+    </code>
 
     <h3>Supported</h3>
     <p>Debian, Ubuntu, Fedora, CentOS, ...</p>
@@ -109,33 +109,33 @@
 
     <p>You can disable the screen saver feature with:</p>
 
-    ```bash
+    <code>
     sudo systemctl mask suspend.target && sudo systemctl mask sleep.target
-    ```
+    </code>
 
     <h2>GTK - Theme problems</h2>
 
-    ```bash
+    <code>
     $ touch $HOME/.gtkrc-2.0 $HOME/.config/gtk-3.0/settings.ini
-    ```
+    </code>
 
     <p>paste in $HOME/.gtkrc-2.0</p>
 
-    ```bash
+    <code>
     gtk-icon-theme-name = "Adwaita"
     gtk-theme-name = "Adwaita"
     gtk-font-name = "DejaVu Sans 11"
-    ```
+    </code>
 
     <p>paste in $HOME/.config/gtk-3.0/settings.ini</p>
 
-    ```bash
+    <code>
     [Settings]
     gtk-icon-theme-name = Adwaita
     gtk-theme-name = Adwaita
     gtk-font-name = DejaVu Sans 11
     gtk-application-prefer-dark-theme = true
-    ```
+    </code>
     <p>other themes https://github.com/catppuccin/gtk</p>
     <p>more details in https://wiki.archlinux.org/index.php/GTK#Dark_theme_variant</p>
 </body>
