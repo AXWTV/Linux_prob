@@ -1,0 +1,18 @@
+body {
+    background-color: #11111b;
+  }
+  
+h1 {
+    color: #cdd6f4;
+    margin-left: 20px;
+  }
+
+p {
+    color: #a6adc8;
+    margin-left: 20px;
+}
+
+code {
+    color: #b4befe;
+    margin-left: 20px;
+}
