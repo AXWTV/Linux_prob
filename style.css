@@ -7,8 +7,20 @@ h1 {
     margin-left: 20px;
   }
 
-p {
+h2 {
+    color: #bac2de;
+    margin-left: 20px;
+}
+
+h3 {
     color: #a6adc8;
+    margin-left: 20px;
+}
+
+
+
+p {
+    color: #9399b2;
     margin-left: 20px;
 }
 
